@@ -16,28 +16,25 @@ class MusicTools {
     
     
     static func playRandom() {
-        let myMediaPlayer = MPMusicPlayerController.systemMusicPlayer
+        let mediaPlayer = MPMusicPlayerController.systemMusicPlayer
         
-        myMediaPlayer.setQueue(with: MPMediaQuery.songs())
+        mediaPlayer.setQueue(with: MPMediaQuery.songs())
         
-        myMediaPlayer.shuffleMode = MPMusicShuffleMode.songs
-        myMediaPlayer.skipToNextItem()
-        myMediaPlayer.play()
+        mediaPlayer.shuffleMode = MPMusicShuffleMode.songs
+        mediaPlayer.skipToNextItem()
+        mediaPlayer.play()
         
     }
     
     
     static func playRandomFromQuery() {
-        let myMediaPlayer = MPMusicPlayerController.systemMusicPlayer
+        let mediaPlayer = MPMusicPlayerController.systemMusicPlayer
     
+        mediaPlayer.setQueue(with: MPMediaQuery.songs())
         
-        
-        
-        myMediaPlayer.setQueue(with: MPMediaQuery.songs())
-        
-        myMediaPlayer.shuffleMode = MPMusicShuffleMode.songs
-        myMediaPlayer.skipToNextItem()
-        myMediaPlayer.play()
+        mediaPlayer.shuffleMode = MPMusicShuffleMode.songs
+        mediaPlayer.skipToNextItem()
+        mediaPlayer.play()
         
     }
     
@@ -45,17 +42,17 @@ class MusicTools {
     
     static func getCurrentSong() -> MPMediaItem? {
         
-        let myMediaPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
+        let mediaPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
         // Add a playback queue containing all songs on the device
         
-        myMediaPlayer.setQueue(with: MPMediaQuery.songs())
+        mediaPlayer.setQueue(with: MPMediaQuery.songs())
         // Start playing from the beginning of the queue
         
-        myMediaPlayer.shuffleMode = MPMusicShuffleMode.songs
-        myMediaPlayer.skipToNextItem()
-        myMediaPlayer.play()
+        mediaPlayer.shuffleMode = MPMusicShuffleMode.songs
+        mediaPlayer.skipToNextItem()
+        mediaPlayer.play()
         
-        return myMediaPlayer.nowPlayingItem
+        return mediaPlayer.nowPlayingItem
         
     }
 
